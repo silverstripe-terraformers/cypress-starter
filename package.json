@@ -1,0 +1,57 @@
+{
+  "name": "cypress-starter",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silverstripeltd/cypress-starter.git"
+  },
+  "author": {
+    "name": "Terraformers",
+    "email": "terraformers@silverstripe.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "open": "cypress open",
+    "test": "yarn test:e2e",
+    "test:e2e": "cypress run --browser chrome --spec 'cypress/e2e/*.feature' -e 'TAGS=not @skipped'",
+    "test:e2e:qa": "cypress run --browser chrome --spec 'cypress/qa/*.feature' -e 'TAGS=not @skipped'"
+  },
+  "engines": {
+    "node": "^20"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19",
+    "@badeball/cypress-cucumber-preprocessor": "^13.0.2",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "@cypress/code-coverage": "^3.10",
+    "babel-loader": "^8.2",
+    "babel-plugin-istanbul": "^6.1",
+    "cross-env": "^7.0",
+    "cypress": "^10.10.0",
+    "cypress-plugin-tab": "^1.0.5",
+    "dotenv": "^16.0",
+    "esbuild": "^0.18.10",
+    "eslint": "^8.25",
+    "eslint-config-airbnb-base": "^15.0",
+    "eslint-config-prettier": "^8.5",
+    "eslint-plugin-import": "^2.26",
+    "eslint-webpack-plugin": "^3.2",
+    "webpack": "^5.74"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.0.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/[filepath]/**/*.{js,ts}",
+      "cypress/[filepath].{js,ts}",
+      "cypress/common/**/*.{js,ts}"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/silverstripeltd/cypress-starter/issues"
+  },
+  "readme": "Getting Started",
+  "homepage": "https://github.com/silverstripeltd/cypress-starter#readme",
+  "_id": "cypress-starter@0.0.0"
+}
